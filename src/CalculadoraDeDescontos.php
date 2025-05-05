@@ -2,16 +2,24 @@
 
 namespace Alura\DesignPattern;
 
+use Alura\DesignPattern\Descontos\Desconto;
+use Alura\DesignPattern\Descontos\DescontoMaisDe500Reais;
+use Alura\DesignPattern\Descontos\DescontoMaisDe5Itens;
+use Alura\DesignPattern\Descontos\SemDesconto;
+
 class CalculadoraDeDescontos
 {
     public function CalculaDesconto(Orcamento $orcamento): float
     {
+        $cadeiaDeDescontos = new DescontoMaisDe5Itens(
+            new DescontoMaisDe500Reais(
+                new SemDesconto()
+            )
 
-        if($orcamento->quantidadeItens > 5){
-            return $orcamento->valor * 0.01;
-        }
+        );
 
-        return 0;
-        
+
+        return $cadeiaDeDescontos->CalculaDesconto($orcamento);
+
     }
 }
