@@ -37,3 +37,30 @@ Então, ao invés de ter vários ifs para verificar qual o imposto que quero cal
            Criacionais
            Como diminuir a complexidade do nosso código, trocando múltiplas condicionais por classes
            Esta técnica é chamada de Strategy, que é um dos padrões de projeto
+
+           Nesta aula, aprendemos:
+
+           A diferenciar casos onde padrões semelhantes podem ser aplicados
+           Como criar uma cadeia de possíveis algoritmos como Chain of Responsibility
+           A utilizar o padrão para aplicar um desconto dentro de uma cadeia de possíveis descontos
+
+           No último vídeo, criamos dois novos impostos, que possuem regras muito semelhantes: há duas alíquotas possíveis para cada um.
+
+           Qual o problema com o código até este ponto?
+
+           O algoritmo para o cálculo de impostos deste tipo está duplicado
+
+
+           Alternativa correta! A verificação por uma alíquota máxima e
+            o retorno condicional da alíquota está duplicada em duas classes.
+             Mesmo em um exemplo pequeno, como este, duplicação nunca é legal.
+              Mas imagine um algoritmo grande. O ideal é sempre extrair códigos duplicados.
+
+               "Ctrl + Alt + M”
+
+               Nesta aula:
+
+               Reforçamos a ideia de que repetição de código é problemática
+               Criamos um template de algoritmo que estava sendo replicado em mais de uma classe e utilizamos herança para reaproveitar esse código
+               Aprendemos que a esta técnica foi dado o nome de Template Method
+               Vimos que é possível aplicar mais de um padrão no mesmo código
