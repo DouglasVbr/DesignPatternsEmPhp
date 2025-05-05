@@ -1,0 +1,336 @@
+[1mdiff --git a/src/Anotacoes b/Anotacoes[m
+[1msimilarity index 63%[m
+[1mrename from src/Anotacoes[m
+[1mrename to Anotacoes[m
+[1mindex de5755c..26e03ef 100644[m
+[1m--- a/src/Anotacoes[m
+[1m+++ b/Anotacoes[m
+[36m@@ -1,66 +1,39 @@[m
+[31m-Com isso matamos o problema e é um padrão de projeto muito famoso chamado strategy.[m
+[31m-Se temos algum algoritmo, alguma estratégia, algum cálculo que precisa fazer,[m
+[31m-alguma ação que precisamos fazer, e essa ação depende de algum parâmetro,[m
+[31m- podemos extrair esse parâmetro para uma nova classe, esse comportamento para uma nova classe,[m
+[31m-e ao invés de ter vários ifs para verificar o valor do parâmetro, passamos essa classe que[m
+[31m-representa essa estratégia de implementação do algoritmo, e essa estratégia vai ser executada.[m
+[31m-[m
+[31m-[m
+[31m-Então, ao invés de ter vários ifs para verificar qual o imposto que quero calcular,[m
+[31m- passo o imposto em si, e esse imposto sabe se calcular, ele sabe calcular o imposto[m
+[31m-  baseado no orçamento. Com isso implementamos um padrão de projeto chamado strategy.[m
+[31m-   Foi o primeiro padrão de projeto que implementamos e vamos continuar implementando[m
+[31m-    outros durante o treinamento, mas esse foi o primeiro e se não me engano,[m
+[31m-     posso estar errado, mas pelo menos no meu dia a dia é o mais comum de se[m
+[31m-      implementar, é o padrão de projeto que mais utilizo, então é importante que você entenda.[m
+[31m-[m
+[31m-[m
+[31m-      Agora todas as classes que forem assinar esse contrato,[m
+[31m-       que forem calcular o imposto, vão precisar implementar essa interface.[m
+[31m-        Posso dizer que ICMS implementa imposto. O php storm já reconheceu que[m
+[31m-         o método está corretamente implementado. Se eu vier em ISS,[m
+[31m-          vou dizer que ela implementa imposto. E aqui tem um erro porque não[m
+[31m-           tenho o método implementado. Se eu corrigir o nome dele aqui, beleza, tudo certo.[m
+[31m-[m
+[31m-           Todos os padrões de projeto definidos pela Gang of Four (GoF) possuem uma motivação: um problema a ser resolvido.[m
+[31m-[m
+[31m-           Que tipo de problema o padrão Strategy visa resolver?[m
+[31m-[m
+[31m-           A existência de diversos algoritmos para uma ação, resultando na possibilidade de vários ifs[m
+[31m-[m
+[31m-           Nesta aula, aprendemos que:[m
+[31m-[m
+[31m-           Padrões de projeto são soluções genéricas para problemas recorrentes do desenvolvimento de software[m
+[31m-           Existem três principais categorias de padrões de projeto[m
+[31m-           Comportamentais (que serão vistos neste treinamento)[m
+[31m-           Estruturais[m
+[31m-           Criacionais[m
+[31m-           Como diminuir a complexidade do nosso código, trocando múltiplas condicionais por classes[m
+[31m-           Esta técnica é chamada de Strategy, que é um dos padrões de projeto[m
+[31m-[m
+[31m-           Nesta aula, aprendemos:[m
+[31m-[m
+[31m-           A diferenciar casos onde padrões semelhantes podem ser aplicados[m
+[31m-           Como criar uma cadeia de possíveis algoritmos como Chain of Responsibility[m
+[31m-           A utilizar o padrão para aplicar um desconto dentro de uma cadeia de possíveis descontos[m
+[31m-[m
+[31m-           No último vídeo, criamos dois novos impostos, que possuem regras muito semelhantes: há duas alíquotas possíveis para cada um.[m
+[31m-[m
+[31m-           Qual o problema com o código até este ponto?[m
+[31m-[m
+[31m-           O algoritmo para o cálculo de impostos deste tipo está duplicado[m
+[31m-[m
+[31m-[m
+[31m-           Alternativa correta! A verificação por uma alíquota máxima e[m
+[31m-            o retorno condicional da alíquota está duplicada em duas classes.[m
+[31m-             Mesmo em um exemplo pequeno, como este, duplicação nunca é legal.[m
+[31m-              Mas imagine um algoritmo grande. O ideal é sempre extrair códigos duplicados.[m
+[31m-[m
+[31m-               "Ctrl + Alt + M”[m
+[31m-[m
+[31m-               Nesta aula:[m
+[31m-[m
+[31m-               Reforçamos a ideia de que repetição de código é problemática[m
+[31m-               Criamos um template de algoritmo que estava sendo replicado em mais de uma classe e utilizamos herança para reaproveitar esse código[m
+[31m-               Aprendemos que a esta técnica foi dado o nome de Template Method[m
+[31m-               Vimos que é possível aplicar mais de um padrão no mesmo código[m
+\ No newline at end of file[m
+[32m+[m[32mCom isso matamos o problema e é um padrão de projeto muito famoso chamado strategy.[m[41m[m
+[32m+[m[32mSe temos algum algoritmo, alguma estratégia, algum cálculo que precisa fazer,[m[41m[m
+[32m+[m[32malguma ação que precisamos fazer, e essa ação depende de algum parâmetro,[m[41m[m
+[32m+[m[32m podemos extrair esse parâmetro para uma nova classe, esse comportamento para uma nova classe,[m[41m[m
+[32m+[m[32me ao invés de ter vários ifs para verificar o valor do parâmetro, passamos essa classe que[m[41m[m
+[32m+[m[32mrepresenta essa estratégia de implementação do algoritmo, e essa estratégia vai ser executada.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mEntão, ao invés de ter vários ifs para verificar qual o imposto que quero calcular,[m[41m[m
+[32m+[m[32m passo o imposto em si, e esse imposto sabe se calcular, ele sabe calcular o imposto[m[41m[m
+[32m+[m[32m  baseado no orçamento. Com isso implementamos um padrão de projeto chamado strategy.[m[41m[m
+[32m+[m[32m   Foi o primeiro padrão de projeto que implementamos e vamos continuar implementando[m[41m[m
+[32m+[m[32m    outros durante o treinamento, mas esse foi o primeiro e se não me engano,[m[41m[m
+[32m+[m[32m     posso estar errado, mas pelo menos no meu dia a dia é o mais comum de se[m[41m[m
+[32m+[m[32m      implementar, é o padrão de projeto que mais utilizo, então é importante que você entenda.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m      Agora todas as classes que forem assinar esse contrato,[m[41m[m
+[32m+[m[32m       que forem calcular o imposto, vão precisar implementar essa interface.[m[41m[m
+[32m+[m[32m        Posso dizer que ICMS implementa imposto. O php storm já reconheceu que[m[41m[m
+[32m+[m[32m         o método está corretamente implementado. Se eu vier em ISS,[m[41m[m
+[32m+[m[32m          vou dizer que ela implementa imposto. E aqui tem um erro porque não[m[41m[m
+[32m+[m[32m           tenho o método implementado. Se eu corrigir o nome dele aqui, beleza, tudo certo.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m           Todos os padrões de projeto definidos pela Gang of Four (GoF) possuem uma motivação: um problema a ser resolvido.[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m           Que tipo de problema o padrão Strategy visa resolver?[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m           A existência de diversos algoritmos para uma ação, resultando na possibilidade de vários ifs[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m           Nesta aula, aprendemos que:[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m           Padrões de projeto são soluções genéricas para problemas recorrentes do desenvolvimento de software[m[41m[m
+[32m+[m[32m           Existem três principais categorias de padrões de projeto[m[41m[m
+[32m+[m[32m           Comportamentais (que serão vistos neste treinamento)[m[41m[m
+[32m+[m[32m           Estruturais[m[41m[m
+[32m+[m[32m           Criacionais[m[41m[m
+[32m+[m[32m           Como diminuir a complexidade do nosso código, trocando múltiplas condicionais por classes[m[41m[m
+[32m+[m[32m           Esta técnica é chamada de Strategy, que é um dos padrões de projeto[m
+\ No newline at end of file[m
+[1mdiff --git a/src/Impostos/Icms.php b/Impostos/Icms.php[m
+[1msimilarity index 78%[m
+[1mrename from src/Impostos/Icms.php[m
+[1mrename to Impostos/Icms.php[m
+[1mindex 661749b..ff9bec3 100644[m
+[1m--- a/src/Impostos/Icms.php[m
+[1m+++ b/Impostos/Icms.php[m
+[36m@@ -1,14 +1,14 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-namespace Alura\DesignPattern\Impostos;[m
+[31m-[m
+[31m-use Alura\DesignPattern\Orcamento;[m
+[31m-[m
+[31m-class Icms implements Imposto[m
+[31m-{[m
+[31m-public function calculaImposto(Orcamento $orcamento): float[m
+[31m-{[m
+[31m-    return $orcamento->valor * 0.01;[m
+[31m-[m
+[31m-}[m
+[32m+[m[32m<?php[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mnamespace Alura\DesignPattern\Impostos;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32muse Alura\DesignPattern\Orcamento;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mclass Icms implements Imposto[m[41m[m
+[32m+[m[32m{[m[41m[m
+[32m+[m[32mpublic function calculaImposto(Orcamento $orcamento): float[m[41m[m
+[32m+[m[32m{[m[41m[m
+[32m+[m[32m    return $orcamento->valor * 0.10;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m}[m[41m[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/src/Impostos/Imposto.php b/Impostos/Imposto.php[m
+[1msimilarity index 93%[m
+[1mrename from src/Impostos/Imposto.php[m
+[1mrename to Impostos/Imposto.php[m
+[1mindex 7648ae2..2ed8eda 100644[m
+[1m--- a/src/Impostos/Imposto.php[m
+[1m+++ b/Impostos/Imposto.php[m
+[36m@@ -1,12 +1,12 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-namespace Alura\DesignPattern\Impostos;[m
+[31m-[m
+[31m-use Alura\DesignPattern\Orcamento;[m
+[31m-[m
+[31m-interface Imposto[m
+[31m-{[m
+[31m-public function calculaImposto(Orcamento $orcamento): float;[m
+[31m-[m
+[31m-[m
+[32m+[m[32m<?php[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mnamespace Alura\DesignPattern\Impostos;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32muse Alura\DesignPattern\Orcamento;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32minterface Imposto[m[41m[m
+[32m+[m[32m{[m[41m[m
+[32m+[m[32mpublic function calculaImposto(Orcamento $orcamento): float;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/src/Impostos/Iss.php b/Impostos/Iss.php[m
+[1msimilarity index 94%[m
+[1mrename from src/Impostos/Iss.php[m
+[1mrename to Impostos/Iss.php[m
+[1mindex b398edb..dc3e657 100644[m
+[1m--- a/src/Impostos/Iss.php[m
+[1m+++ b/Impostos/Iss.php[m
+[36m@@ -1,15 +1,15 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-namespace Alura\DesignPattern\Impostos;[m
+[31m-[m
+[31m-use Alura\DesignPattern\Orcamento;[m
+[31m-[m
+[31m-class Iss implements Imposto[m
+[31m-{[m
+[31m-    public function calculaImposto(Orcamento $orcamento): float[m
+[31m-    {[m
+[31m-        return $orcamento->valor * 0.06;[m
+[31m-[m
+[31m-    }[m
+[31m-[m
+[32m+[m[32m<?php[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mnamespace Alura\DesignPattern\Impostos;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32muse Alura\DesignPattern\Orcamento;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mclass Iss implements Imposto[m[41m[m
+[32m+[m[32m{[m[41m[m
+[32m+[m[32m    public function calculaImposto(Orcamento $orcamento): float[m[41m[m
+[32m+[m[32m    {[m[41m[m
+[32m+[m[32m        return $orcamento->valor * 0.06;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    }[m[41m[m
+[32m+[m[41m[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/Orcamento.php b/Orcamento.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f47f9c5[m
+[1m--- /dev/null[m
+[1m+++ b/Orcamento.php[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32m<?php[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mnamespace Alura\DesignPattern;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mclass Orcamento[m[41m[m
+[32m+[m[32m{[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    public float $valor;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/autoload.php b/autoload.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..172f1b9[m
+[1m--- /dev/null[m
+[1m+++ b/autoload.php[m
+[36m@@ -0,0 +1,25 @@[m
+[32m+[m[32m<?php[m
+[32m+[m
+[32m+[m[32m// autoload.php @generated by Composer[m
+[32m+[m
+[32m+[m[32mif (PHP_VERSION_ID < 50600) {[m
+[32m+[m[32m    if (!headers_sent()) {[m
+[32m+[m[32m        header('HTTP/1.1 500 Internal Server Error');[m
+[32m+[m[32m    }[m
+[32m+[m[32m    $err = 'Composer 2.3.0 dropped support for autoloading on PHP <5.6 and you are running '.PHP_VERSION.', please upgrade PHP or use Composer 2.2 LTS via "composer self-update --2.2". Aborting.'.PHP_EOL;[m
+[32m+[m[32m    if (!ini_get('display_errors')) {[m
+[32m+[m[32m        if (PHP_SAPI === 'cli' || PHP_SAPI === 'phpdbg') {[m
+[32m+[m[32m            fwrite(STDERR, $err);[m
+[32m+[m[32m        } elseif (!headers_sent()) {[m
+[32m+[m[32m            echo $err;[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m[32m    trigger_error([m
+[32m+[m[32m        $err,[m
+[32m+[m[32m        E_USER_ERROR[m
+[32m+[m[32m    );[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mrequire_once __DIR__ . '/composer/autoload_real.php';[m
+[32m+[m
+[32m+[m[32mreturn ComposerAutoloaderInitd751713988987e9331980363e24189ce::getLoader();[m
+[1mdiff --git a/calculadoraDeImpostos.php b/calculadoraDeImpostos.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..04ab5fe[m
+[1m--- /dev/null[m
+[1m+++ b/calculadoraDeImpostos.php[m
+[36m@@ -0,0 +1,15 @@[m
+[32m+[m[32m<?php[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mnamespace Alura\DesignPattern;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32muse Alura\DesignPattern\Impostos\Imposto;[m[41m[m
+[32m+[m[32muse Alura\DesignPattern\Orcamento;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mclass CalculadoraDeImpostos[m[41m[m
+[32m+[m[32m{[m[41m[m
+[32m+[m[32m    public function calcula(Orcamento $orcamento, Imposto $imposto) : float[m[41m[m
+[32m+[m[32m    {[m[41m[m
+[32m+[m[32m        return $imposto->calculaImposto($orcamento);[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m    }[m[41m[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/composer/ClassLoader.php b/composer/ClassLoader.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7824d8f[m
+[1m--- /dev/null[m
+[1m+++ b/composer/ClassLoader.php[m
+[36m@@ -0,0 +1,579 @@[m
+[32m+[m[32m<?php[m
+[32m+[m
+[32m+[m[32m/*[m
+[32m+[m[32m * This file is part of Composer.[m
+[32m+[m[32m *[m
+[32m+[m[32m * (c) Nils Adermann <naderman@naderman.de>[m
+[32m+[m[32m *     Jordi Boggiano <j.boggiano@seld.be>[m
+[32m+[m[32m *[m
+[32m+[m[32m * For the full copyright and license information, please view the LICENSE[m
+[32m+[m[32m * file that was distributed with this source code.[m
+[32m+[m[32m */[m
+[32m+[m
+[32m+[m[32mnamespace Composer\Autoload;[m
+[32m+[m
+[32m+[m[32m/**[m
+[32m+[m[32m * ClassLoader implements a PSR-0, PSR-4 and classmap class loader.[m
+[32m+[m[32m *[m
+[32m+[m[32m *     $loader = new \Composer\Autoload\ClassLoader();[m
+[32m+[m[32m *[m
+[32m+[m[32m *     // register classes with namespaces[m
+[32m+[m[32m *     $loader->add('Symfony\Component', __DIR__.'/component');[m
+[32m+[m[32m *     $loader->add('Symfony',           __DIR__.'/framework');[m
+[32m+[m[32m *[m
+[32m+[m[32m *     // activate the autoloader[m
+[32m+[m[32m *     $loader->register();[m
+[32m+[m[32m *[m
+[32m+[m[32m *     // to enable searching the include path (eg. for PEAR packages)[m
+[32m+[m[32m *     $loader->setUseIncludePath(true);[m
+[32m+[m[32m *[m
+[32m+[m[32m * In this example, if you try to use a class in the Symfony\Component[m
+[32m+[m[32m * namespace or one of its children (Symfony\Component\Console for instance),[m
+[32m+[m[32m * the autoloader will first look for the class under the component/[m
+[32m+[m[32m * directory, and it will then fallback to the framework/ directory if not[m
+[32m+[m[32m * found before giving up.[m
+[32m+[m[32m *[m
+[32m+[m[32m * This class is loosely based on the Symfony UniversalClassLoader.[m
+[32m+[m[32m *[m
+[32m+[m[32m * @author Fabien Potencier <fabien@symfony.com>[m
+[32m+[m[32m * @
