@@ -1,0 +1,39 @@
+Com isso matamos o problema e é um padrão de projeto muito famoso chamado strategy.
+Se temos algum algoritmo, alguma estratégia, algum cálculo que precisa fazer,
+alguma ação que precisamos fazer, e essa ação depende de algum parâmetro,
+ podemos extrair esse parâmetro para uma nova classe, esse comportamento para uma nova classe,
+e ao invés de ter vários ifs para verificar o valor do parâmetro, passamos essa classe que
+representa essa estratégia de implementação do algoritmo, e essa estratégia vai ser executada.
+
+
+Então, ao invés de ter vários ifs para verificar qual o imposto que quero calcular,
+ passo o imposto em si, e esse imposto sabe se calcular, ele sabe calcular o imposto
+  baseado no orçamento. Com isso implementamos um padrão de projeto chamado strategy.
+   Foi o primeiro padrão de projeto que implementamos e vamos continuar implementando
+    outros durante o treinamento, mas esse foi o primeiro e se não me engano,
+     posso estar errado, mas pelo menos no meu dia a dia é o mais comum de se
+      implementar, é o padrão de projeto que mais utilizo, então é importante que você entenda.
+
+
+      Agora todas as classes que forem assinar esse contrato,
+       que forem calcular o imposto, vão precisar implementar essa interface.
+        Posso dizer que ICMS implementa imposto. O php storm já reconheceu que
+         o método está corretamente implementado. Se eu vier em ISS,
+          vou dizer que ela implementa imposto. E aqui tem um erro porque não
+           tenho o método implementado. Se eu corrigir o nome dele aqui, beleza, tudo certo.
+
+           Todos os padrões de projeto definidos pela Gang of Four (GoF) possuem uma motivação: um problema a ser resolvido.
+
+           Que tipo de problema o padrão Strategy visa resolver?
+
+           A existência de diversos algoritmos para uma ação, resultando na possibilidade de vários ifs
+
+           Nesta aula, aprendemos que:
+
+           Padrões de projeto são soluções genéricas para problemas recorrentes do desenvolvimento de software
+           Existem três principais categorias de padrões de projeto
+           Comportamentais (que serão vistos neste treinamento)
+           Estruturais
+           Criacionais
+           Como diminuir a complexidade do nosso código, trocando múltiplas condicionais por classes
+           Esta técnica é chamada de Strategy, que é um dos padrões de projeto
