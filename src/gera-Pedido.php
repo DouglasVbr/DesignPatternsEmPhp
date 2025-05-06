@@ -14,5 +14,7 @@ $nomeDoCliente = $argv[3];
 
 $gerarPedido = new GerarPedido($valorOrcamento, $numeroDeItens, $nomeDoCliente);
 $gerarPedidoHandler = new GerarPedidoHandler();
+$gerarPedidoHandler->adicionarAcAosGerarPedido(new \Alura\DesignPattern\AcoesAoGerarPedido\CriarPedidoNoBanco());
+$gerarPedidoHandler->adicionarAcAosGerarPedido(new \Alura\DesignPattern\AcoesAoGerarPedido\LogGerarPedido());
 $gerarPedidoHandler->execultar($gerarPedido);
 
