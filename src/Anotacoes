@@ -112,23 +112,33 @@ no padrão de Command Handlers
 
 
 
-               Reforçamos a ideia de que repetição de código é problemática
-               Criamos um template de algoritmo que estava sendo replicado em mais de uma classe e utilizamos herança para reaproveitar esse código
-               Aprendemos que a esta técnica foi dado o nome de Template Method
-               Vimos que é possível aplicar mais de um padrão no mesmo código
+Reforçamos a ideia de que repetição de código é problemática
+Criamos um template de algoritmo que estava sendo replicado em mais de uma classe e utilizamos herança para reaproveitar esse código
+Aprendemos que a esta técnica foi dado o nome de Template Method
+Vimos que é possível aplicar mais de um padrão no mesmo código
 
-               Nesta aula, aprendemos:
+Nesta aula, aprendemos:
 
-               Que é possível que um objeto se comporte de formas diferentes, dependendo do seu estado
-               Que, se o resultado de uma chamada de método depende do estado, podemos delegar esta ação para uma classe específica do estado atual
-               Esta técnica se chama padrão State
-               Entendemos como o Princípio de Substituição de Liskov pode acabar sendo quebrado em alguns casos na aplicação do State
+Que é possível que um objeto se comporte de formas diferentes, dependendo do seu estado
+Que, se o resultado de uma chamada de método depende do estado, podemos delegar esta ação para uma classe específica do estado atual
+Esta técnica se chama padrão State
+Entendemos como o Princípio de Substituição de Liskov pode acabar sendo quebrado em alguns casos na aplicação do State
 
-               Existe uma variável chamada argv do php que é preenchida automaticamente
-                quando chamamos o php pela linha de comando. Ela contém todos os
-                 argumentos passados para o script. Vou acessar esse link.
+Existe uma variável chamada argv do php que é preenchida automaticamente
+quando chamamos o php pela linha de comando. Ela contém todos os
+argumentos passados para o script. Vou acessar esse link.
 
-                 Nesse array todos os valores que passarmos pela linha
-                  de comando vão chegar nela, sendo que o valor
-                   zero desenho array é o nome do script em si.
-                    Todos a partir do um são os parâmetros passados.
+Nesse array todos os valores que passarmos pela linha
+de comando vão chegar nela, sendo que o valor
+zero desenho array é o nome do script em si.
+Todos a partir do um são os parâmetros passados.
+
+Um Command Handler tem como responsabilidade, normalmente,
+apenas orquestrar as tarefas a serem executadas,
+ou seja, chamar as classes necessárias que realizam as
+tarefas desejadas. No nosso caso, o Command Handler tinha todo o código do fluxo em seu corpo.
+
+Por que separar cada uma das tarefas em uma classes separadas é benéfico?
+
+Porque, com classes menores e mais concisas, é mais fácil encontrar possíveis problemas
+Porque a implementação de cada tarefa pode mudar com o tempo e o Command Handler não deve precisar saber disso

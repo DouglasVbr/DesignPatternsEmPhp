@@ -12,3 +12,7 @@ $valorOrcamento = $argv[1];
 $numeroDeItens = $argv[2];
 $nomeDoCliente = $argv[3];
 
+$gerarPedido = new GerarPedido($valorOrcamento, $numeroDeItens, $nomeDoCliente);
+$gerarPedidoHandler = new GerarPedidoHandler();
+$gerarPedidoHandler->execultar($gerarPedido);
+
