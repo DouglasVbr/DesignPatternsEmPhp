@@ -59,55 +59,7 @@ Mas imagine um algoritmo grande. O ideal é sempre extrair códigos duplicados.
 
 Nesta aula:
 
-Reforçamos a ideia de que repetição de código é problemática
-Criamos um template de algoritmo que estava sendo replicado em mais de uma classe e utilizamos herança para reaproveitar esse código
-Aprendemos que a esta técnica foi dado o nome de Template Method
-Vimos que é possível aplicar mais de um padrão no mesmo código
-
-Nesta aula, aprendemos:
-
-Que é possível que um objeto se comporte de formas diferentes, dependendo do seu estado
-Que, se o resultado de uma chamada de método depende do estado, podemos delegar esta ação para uma classe específica do estado atual
-Esta técnica se chama padrão State
-Entendemos como o Princípio de Substituição de Liskov pode acabar sendo quebrado em alguns casos na aplicação do State
-
-Existe uma variável chamada argv do php que é preenchida automaticamente
-quando chamamos o php pela linha de comando. Ela contém todos os
-argumentos passados para o script. Vou acessar esse link.
-
-Nesse array todos os valores que passarmos pela linha
-de comando vão chegar nela, sendo que o valor
-zero desenho array é o nome do script em si.
-Todos a partir do um são os parâmetros passados.
-
-Além desse problema, alguns outros foram surgindo,
-por isso surgiu um novo padrão que não é tão novo,
-mas hoje é muito utilizado, de command handlers,
-ou os application services.
-
-Em todos os lugares que precisar só preciso disso.
-Todos os lugares que tiver que executar só preciso disso.
-Preciso do handler e crio meu comando para executar.
-Não preciso copiar todas as regras de negócio,
-tudo que precisa ser feito. Então,
-se em algum momento eu precisar passar além
-de enviar e-mail e criar um pedido no banco de dados
-gerar log de criação de pedido,
-também estou gerando log, e no meu controller,
-que usa esse comando, nada mudou. No meu controller da API
-que gera esse comando, nada mudou.
-No meu serviço pela linha de comando nada mudou.
-
-O padrão de projetos Command é, provavelmente,
-um dos que mais gera confusão no mundo PHP
-(e acredito que no mundo de desenvolvimento web em geral),
-já que alguns conceitos mais específicos pro mundo da web surgiram.
-
-Também é muito interessante o estudo mais aprofundado sobre DDD,
-Clean Architecture, Arquitetura Hexagonal, etc.
-No estudo sobre esses conceitos, você vai esbarrar
-no padrão de Command Handlers
-(que foi aplicado de forma bem simples nesta aula).
-
-
-
+               Reforçamos a ideia de que repetição de código é problemática
+               Criamos um template de algoritmo que estava sendo replicado em mais de uma classe e utilizamos herança para reaproveitar esse código
+               Aprendemos que a esta técnica foi dado o nome de Template Method
+               Vimos que é possível aplicar mais de um padrão no mesmo código
