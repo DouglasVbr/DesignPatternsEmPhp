@@ -64,3 +64,19 @@ Então, ao invés de ter vários ifs para verificar qual o imposto que quero cal
                Criamos um template de algoritmo que estava sendo replicado em mais de uma classe e utilizamos herança para reaproveitar esse código
                Aprendemos que a esta técnica foi dado o nome de Template Method
                Vimos que é possível aplicar mais de um padrão no mesmo código
+
+               Nesta aula, aprendemos:
+
+               Que é possível que um objeto se comporte de formas diferentes, dependendo do seu estado
+               Que, se o resultado de uma chamada de método depende do estado, podemos delegar esta ação para uma classe específica do estado atual
+               Esta técnica se chama padrão State
+               Entendemos como o Princípio de Substituição de Liskov pode acabar sendo quebrado em alguns casos na aplicação do State
+
+               Existe uma variável chamada argv do php que é preenchida automaticamente
+                quando chamamos o php pela linha de comando. Ela contém todos os
+                 argumentos passados para o script. Vou acessar esse link.
+
+                 Nesse array todos os valores que passarmos pela linha
+                  de comando vão chegar nela, sendo que o valor
+                   zero desenho array é o nome do script em si.
+                    Todos a partir do um são os parâmetros passados.
