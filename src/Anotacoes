@@ -7,60 +7,107 @@ representa essa estratégia de implementação do algoritmo, e essa estratégia 
 
 
 Então, ao invés de ter vários ifs para verificar qual o imposto que quero calcular,
- passo o imposto em si, e esse imposto sabe se calcular, ele sabe calcular o imposto
-  baseado no orçamento. Com isso implementamos um padrão de projeto chamado strategy.
-   Foi o primeiro padrão de projeto que implementamos e vamos continuar implementando
-    outros durante o treinamento, mas esse foi o primeiro e se não me engano,
-     posso estar errado, mas pelo menos no meu dia a dia é o mais comum de se
-      implementar, é o padrão de projeto que mais utilizo, então é importante que você entenda.
+passo o imposto em si, e esse imposto sabe se calcular, ele sabe calcular o imposto
+baseado no orçamento. Com isso implementamos um padrão de projeto chamado strategy.
+Foi o primeiro padrão de projeto que implementamos e vamos continuar implementando
+outros durante o treinamento, mas esse foi o primeiro e se não me engano,
+posso estar errado, mas pelo menos no meu dia a dia é o mais comum de se
+implementar, é o padrão de projeto que mais utilizo, então é importante que você entenda.
 
 
-      Agora todas as classes que forem assinar esse contrato,
-       que forem calcular o imposto, vão precisar implementar essa interface.
-        Posso dizer que ICMS implementa imposto. O php storm já reconheceu que
-         o método está corretamente implementado. Se eu vier em ISS,
-          vou dizer que ela implementa imposto. E aqui tem um erro porque não
-           tenho o método implementado. Se eu corrigir o nome dele aqui, beleza, tudo certo.
+Agora todas as classes que forem assinar esse contrato,
+que forem calcular o imposto, vão precisar implementar essa interface.
+Posso dizer que ICMS implementa imposto. O php storm já reconheceu que
+o método está corretamente implementado. Se eu vivou dizer que ela implementa imposto. E aqui tem um erro porque não
+tenho o método implementado. Se eu corrigir o nome dele aqui, beleza, tudo certo.
 
-           Todos os padrões de projeto definidos pela Gang of Four (GoF) possuem uma motivação: um problema a ser resolvido.
+Todos os padrões de projeto definidos pela Gang of Four (GoF) possuem uma motivação: um problema a ser resolvido.
 
-           Que tipo de problema o padrão Strategy visa resolver?
+Que tipo de problema o padrão Strategy visa resolver?
 
-           A existência de diversos algoritmos para uma ação, resultando na possibilidade de vários ifs
+A existência de diversos algoritmos para uma ação, resultando na possibilidade de vários ifs
 
-           Nesta aula, aprendemos que:
+Nesta aula, aprendemos que:
 
-           Padrões de projeto são soluções genéricas para problemas recorrentes do desenvolvimento de software
-           Existem três principais categorias de padrões de projeto
-           Comportamentais (que serão vistos neste treinamento)
-           Estruturais
-           Criacionais
-           Como diminuir a complexidade do nosso código, trocando múltiplas condicionais por classes
-           Esta técnica é chamada de Strategy, que é um dos padrões de projeto
+Padrões de projeto são soluções genéricas para problemas recorrentes do desenvolvimento de software
+Existem três principais categorias de padrões de projeto
+Comportamentais (que serão vistos neste treinamento)
+Estruturais
+Criacionais
+Como diminuir a complexidade do nosso código, trocando múltiplas condicionais por classes
+Esta técnica é chamada de Strategy, que é um dos padrões de projeto
 
-           Nesta aula, aprendemos:
+Nesta aula, aprendemos:
 
-           A diferenciar casos onde padrões semelhantes podem ser aplicados
-           Como criar uma cadeia de possíveis algoritmos como Chain of Responsibility
-           A utilizar o padrão para aplicar um desconto dentro de uma cadeia de possíveis descontos
+A diferenciar casos onde padrões semelhantes podem ser aplicados
+Como criar uma cadeia de possíveis algoritmos como Chain of Responsibility
+A utilizar o padrão para aplicar um desconto dentro de uma cadeia de possíveis descontos
 
-           No último vídeo, criamos dois novos impostos, que possuem regras muito semelhantes: há duas alíquotas possíveis para cada um.
+No último vídeo, criamos dois novos impostos, que possuem regras muito semelhantes: há duas alíquotas possíveis para cada um.
 
-           Qual o problema com o código até este ponto?
+Qual o problema com o código até este ponto?
 
-           O algoritmo para o cálculo de impostos deste tipo está duplicado
+O algoritmo para o cálculo de impostos deste tipo está duplicado
 
 
-           Alternativa correta! A verificação por uma alíquota máxima e
-            o retorno condicional da alíquota está duplicada em duas classes.
-             Mesmo em um exemplo pequeno, como este, duplicação nunca é legal.
-              Mas imagine um algoritmo grande. O ideal é sempre extrair códigos duplicados.
+Alternativa correta! A verificação por uma alíquota máxima e
+o retorno condicional da alíquota está duplicada em duas classes.
+Mesmo em um exemplo pequeno, como este, duplicação nunca é legal.
+Mas imagine um algoritmo grande. O ideal é sempre extrair códigos duplicados.
 
-               "Ctrl + Alt + M”
+"Ctrl + Alt + M”
 
-               Nesta aula:
+Nesta aula:
 
-               Reforçamos a ideia de que repetição de código é problemática
-               Criamos um template de algoritmo que estava sendo replicado em mais de uma classe e utilizamos herança para reaproveitar esse código
-               Aprendemos que a esta técnica foi dado o nome de Template Method
-               Vimos que é possível aplicar mais de um padrão no mesmo código
+Reforçamos a ideia de que repetição de código é problemática
+Criamos um template de algoritmo que estava sendo replicado em mais de uma classe e utilizamos herança para reaproveitar esse código
+Aprendemos que a esta técnica foi dado o nome de Template Method
+Vimos que é possível aplicar mais de um padrão no mesmo código
+
+Nesta aula, aprendemos:
+
+Que é possível que um objeto se comporte de formas diferentes, dependendo do seu estado
+Que, se o resultado de uma chamada de método depende do estado, podemos delegar esta ação para uma classe específica do estado atual
+Esta técnica se chama padrão State
+Entendemos como o Princípio de Substituição de Liskov pode acabar sendo quebrado em alguns casos na aplicação do State
+
+Existe uma variável chamada argv do php que é preenchida automaticamente
+quando chamamos o php pela linha de comando. Ela contém todos os
+argumentos passados para o script. Vou acessar esse link.
+
+Nesse array todos os valores que passarmos pela linha
+de comando vão chegar nela, sendo que o valor
+zero desenho array é o nome do script em si.
+Todos a partir do um são os parâmetros passados.
+
+Além desse problema, alguns outros foram surgindo,
+por isso surgiu um novo padrão que não é tão novo,
+mas hoje é muito utilizado, de command handlers,
+ou os application services.
+
+Em todos os lugares que precisar só preciso disso.
+Todos os lugares que tiver que executar só preciso disso.
+Preciso do handler e crio meu comando para executar.
+Não preciso copiar todas as regras de negócio,
+tudo que precisa ser feito. Então,
+se em algum momento eu precisar passar além
+de enviar e-mail e criar um pedido no banco de dados
+gerar log de criação de pedido,
+também estou gerando log, e no meu controller,
+que usa esse comando, nada mudou. No meu controller da API
+que gera esse comando, nada mudou.
+No meu serviço pela linha de comando nada mudou.
+
+O padrão de projetos Command é, provavelmente,
+um dos que mais gera confusão no mundo PHP
+(e acredito que no mundo de desenvolvimento web em geral),
+já que alguns conceitos mais específicos pro mundo da web surgiram.
+
+Também é muito interessante o estudo mais aprofundado sobre DDD,
+Clean Architecture, Arquitetura Hexagonal, etc.
+No estudo sobre esses conceitos, você vai esbarrar
+no padrão de Command Handlers
+(que foi aplicado de forma bem simples nesta aula).
+
+
+
